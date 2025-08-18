@@ -1,0 +1,141 @@
+.blog-list {
+  padding: 8rem 2rem;
+  background: #070d1b; /* dark background */
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: auto;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 450px;
+  background: #0e1627;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-card .blog-image {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.blog-card .blog-user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+}
+
+.blog-body span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.blog-title {
+  font-size: 1.4rem;
+  color: #ffd700;
+  margin-bottom: 0.8rem;
+}
+
+.blog-date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.blog-excerpt {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e2e2;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-more {
+  background-color: #fec544;
+  color: #070d1b;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.4em;
+  font-weight: 400;
+  padding: 10px 1em;
+  border-radius: 50px;
+  min-width: auto;
+  border: none;
+  outline: none;
+  transition: all 0.4s ease;
+  text-transform: capitalize;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.read-more:hover {
+  background-color: #e0ad36;
+}
+
+
+.blog-post-container {
+  padding: 5rem 2rem;
+  background: #070d1b;
+  color: #fff;
+
+}
+
+.blog-post {
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 60px;
+}
+
+.blog-body {
+  padding: 20px;
+}
+
+.post-container {
+  border: 1px solid #6f6f6f;
+  padding: 46px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-post table {
+  width: auto;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.blog-post th,
+.blog-post td {
+  border: 1px solid #939393;
+  padding: 0.5rem;
+}
+
+.blog-post th {
+  background-color: #c1c1c1;
+  text-align: center;
+  color: #303030;
+}

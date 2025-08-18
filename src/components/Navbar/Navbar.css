@@ -1,0 +1,171 @@
+/* ===== Base bar ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: padding 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+  background: transparent;
+}
+
+.navbar.affix {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 40px;
+}
+
+/* ===== Inner container ===== */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===== Logo ===== */
+.navbar-logo img {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+.navbar.affix .navbar-logo img {
+  height: 40px;
+}
+
+/* ===== Links ===== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+.nav-link:hover { color: #fff; }
+
+/* Yellow underline animation (0% -> 100%) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: #ffd700;
+  transition: width 300ms ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+.nav-link.no-underline::after,
+.nav-link.no-underline:hover::after {
+  width: 0 !important;
+}
+
+
+.navTrigger {
+  display: none; 
+  position: relative;
+  width: 32px;
+  height: 22px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The three bars */
+.navTrigger div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition:
+    transform 350ms ease,
+    opacity 250ms ease,
+    top 350ms ease,
+    bottom 350ms ease;
+  transform-origin: center;
+}
+
+/* Top / middle / bottom placement */
+.navTrigger div:nth-child(1) { top: 0; }
+.navTrigger div:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navTrigger div:nth-child(3) { bottom: 0; }
+
+/* Morph to X when active */
+.navTrigger.active div:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.navTrigger.active div:nth-child(2) {
+  opacity: 0;
+  transform: translateY(-50%) scaleX(0.6);
+}
+.navTrigger.active div:nth-child(3) {
+  bottom: auto;        /* release bottom so we can center it */
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ===== Mobile menu panel ===== */
+@media (max-width: 768px) {
+  .navTrigger { display: block; }
+
+  .nav-list {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    padding: 14px 0;
+    gap: 14px;
+    margin: 0;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease, transform 250ms ease;
+  }
+
+  .nav-list.show_list {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-logo img,
+  .nav-link::after,
+  .navTrigger div,
+  .nav-list {
+    transition: none !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .nav-list .separator {
+    display: none;
+  }
+}

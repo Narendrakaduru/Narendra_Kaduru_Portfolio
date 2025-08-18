@@ -1,0 +1,29 @@
+.st-footer {
+  background-color: #070d1b; /* Dark footer */
+  color: #aaa;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.st-footer a.footer-link {
+  color: #fec544; /* Accent color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.st-footer a.footer-link:hover {
+  color: #fec544;
+}
+
+.st-footer .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.st-footer .text-center {
+  text-align: center;
+}
+
+.st-footer .st-copyright-text {
+  margin: 0;
+}

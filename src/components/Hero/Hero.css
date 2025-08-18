@@ -1,0 +1,93 @@
+.hero-section {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  font-family: "Inter", sans-serif;
+  padding-top: 60px;
+}
+
+.hero-text h3 {
+  font-weight: 200;
+  color: #ffc107;
+  font-size: 30px;
+}
+
+.hero-text h1 {
+  font-size: 90px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero-text .btn {
+  font-weight: 500;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+/* === Typing effect (faithful to your CSS) === */
+#typing {
+  font-weight: 200;            /* adjust if you want bold */
+  font-size: 1.5rem;           /* fits the hero's H2 scale */
+  color: #a9adb8;
+  border-right: 0.15em solid var(--caret-color, #ffc107); /* use yellow by default */
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  max-width: 22ch;             /* longest text length */
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+/* Caret blink */
+@keyframes blink-caret {
+  0%, 100% { border-color: var(--caret-color, #ffc107); }
+  50% { border-color: transparent; }
+}
+
+/* If you truly want black caret like your snippet, uncomment this line: */
+/* :root { --caret-color: black; } */
+
+.btn-hero {
+    background-color: #fec544;
+    color: #070d1b;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding: 12px 1.2em;
+    border-radius: 50px;
+    min-width: 150px;
+    border: none;
+    outline: none;
+    transition: all .4s ease;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn-hero:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px #fec64450;
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-text h3 {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+  .hero-text h1 {
+    font-size: 60px;
+  }
+  #typing {
+    font-size: 1.2rem;
+  }
+  .btn-hero {
+    margin-bottom: 20px;
+  }
+}
