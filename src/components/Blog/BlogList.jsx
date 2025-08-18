@@ -26,7 +26,10 @@ const BlogList = () => {
                     <div className="blog-grid">
                         {blogs.map((blog) => (
                         <div className="blog-card" key={blog.id}>
-                            <img src={blog.image} alt={blog.slug} className="blog-image"/>
+                            <div className="blog-image-wrapper">
+                                <img src={blog.image} alt={blog.slug} className="blog-image"/>
+                                <span className="blog-tag">{blog.tag}</span>
+                            </div>
                             <div className="blog-body">
                                 <h3 className="blog-title">{blog.title}</h3>
                                 <p className="blog-date">{blog.date}</p>
