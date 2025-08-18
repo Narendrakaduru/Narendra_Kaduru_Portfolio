@@ -38,6 +38,7 @@ const BlogPost = () => {
           <meta property="og:image" content={post.image} />
           <meta property="og:description" content={post.excerpt} />
           <meta property="og:url" content={`https://narendra-kaduru-portfolio.netlify.app/blog/${post.slug}`} />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:type" content="website" />
         </Helmet>
@@ -49,6 +50,13 @@ const BlogPost = () => {
               <div className="container">
                 <div className="blog-post mt-7">
                   <div className="post-container">
+                      {post.image && (
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="blog-feature-image"
+                        />
+                      )}
                       <ReactMarkdown
                         children={content}
                         remarkPlugins={[remarkGfm]} // <-- Enable GitHub-flavored Markdown
