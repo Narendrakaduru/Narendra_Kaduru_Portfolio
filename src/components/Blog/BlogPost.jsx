@@ -35,9 +35,11 @@ const BlogPost = () => {
           <title>{post.title} | Narendra's Blog</title>
           <meta name="description" content={post.excerpt} />
           <meta property="og:title" content={post.title} />
+          <meta property="og:image" content={post.image} />
           <meta property="og:description" content={post.excerpt} />
           <meta property="og:url" content={`https://narendra-kaduru-portfolio.netlify.app/blog/${post.slug}`} />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:type" content="website" />
         </Helmet>
 
         <Navbar />
