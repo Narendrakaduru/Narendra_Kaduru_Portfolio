@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { HelmetProvider, Helmet } from '@dr.pogodin/react-helmet';
 import blogs from "./posts.js";
-import blog_user from "../../../public/blog_user.png";
+import blog_user from "/blog_user.png";
 import "./Blog.css";
 
 
