@@ -49,6 +49,10 @@
   color: #aaa;
 }
 
+.blog-body span:nth-last-child(1) {
+  margin-top: 4px;
+}
+
 .blog-title {
   font-size: 1.4rem;
   color: #ffd700;
