@@ -19,6 +19,16 @@ const blogs = [
     excerpt: "Vagrant Command-Line interface through which almost all interaction with Vagrant is done.",
     tag: "Vagrant"
   },
+  {
+    id: 3,
+    slug: "vagrant-installation-on-ubuntu",
+    title: "Install Vagrant on Ubuntu",
+    image: "/blogs/images/vagrant-installation-on-ubuntu.png",
+    date: "August 20, 2025",
+    read_time: "4",
+    excerpt: "Learn how to install and set up Vagrant on Ubuntu step-by-step for managing development environments with ease.",
+    tag: "Vagrant"
+  },
 ];
 
 export default blogs;
