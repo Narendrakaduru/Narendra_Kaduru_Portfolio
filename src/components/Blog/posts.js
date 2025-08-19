@@ -24,7 +24,7 @@ const blogs = [
     slug: "vagrant-installation-on-ubuntu",
     title: "Install Vagrant on Ubuntu",
     image: "/blogs/images/vagrant-installation-on-ubuntu.png",
-    date: "August 20, 2025",
+    date: "August 19, 2025",
     read_time: "4",
     excerpt: "Learn how to install and set up Vagrant on Ubuntu step-by-step for managing development environments with ease.",
     tag: "Vagrant"
