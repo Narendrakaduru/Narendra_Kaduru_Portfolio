@@ -39,6 +39,16 @@ const blogs = [
     excerpt: "Discover how to use Vagrant with Docker as a provider to quickly spin up and manage containerized environments with ease.",
     tag: "Vagrant"
   },
+  {
+    id: 5,
+    slug: "vagrant-virtualbox-provider",
+    title: "Vagrant with the VirtualBox Provider",
+    image: "/blogs/images/vagrant-virtualbox-provider.png",
+    date: "August 20, 2025",
+    read_time: "5",
+    excerpt: "Learn how to use Vagrant with the VirtualBox provider to create and manage full virtual machines for reproducible development environments.",
+    tag: "Vagrant"
+  },
 ];
 
 export default blogs;
