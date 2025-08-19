@@ -29,6 +29,16 @@ const blogs = [
     excerpt: "Learn how to install and set up Vagrant on Ubuntu step-by-step for managing development environments with ease.",
     tag: "Vagrant"
   },
+  {
+    id: 4,
+    slug: "vagrant-with-docker-provider",
+    title: "Vagrant with the Docker Provider",
+    image: "/blogs/images/vagrant-with-docker-provider.png",
+    date: "August 21, 2025",
+    read_time: "5",
+    excerpt: "Discover how to use Vagrant with Docker as a provider to quickly spin up and manage containerized environments with ease.",
+    tag: "Vagrant"
+  },
 ];
 
 export default blogs;
