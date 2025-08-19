@@ -14,23 +14,26 @@ const CodeBlock = ({ language, value }) => {
 
   return (
     <div style={{ position: "relative", marginBottom: "1rem" }}>
-      <button
-        onClick={handleCopy}
-        style={{
-          position: "absolute",
-          right: "0.5rem",
-          top: "0.5rem",
-          background: "#333",
-          color: "#fff",
-          border: "none",
-          padding: "0.25rem 0.5rem",
-          borderRadius: "4px",
-          cursor: "pointer",
-          fontSize: "0.75rem",
-        }}
-      >
-        {copied ? "Copied!" : "Copy"}
-      </button>
+      {/* Show copy button only if it's not plain text */}
+      {language !== "text" && (
+        <button
+          onClick={handleCopy}
+          style={{
+            position: "absolute",
+            right: "0.5rem",
+            top: "0.5rem",
+            background: "#333",
+            color: "#fff",
+            border: "none",
+            padding: "0.25rem 0.5rem",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "0.75rem",
+          }}
+        >
+          {copied ? "Copied!" : "Copy"}
+        </button>
+      )}
       <SyntaxHighlighter language={language} style={atomDark}>
         {value}
       </SyntaxHighlighter>

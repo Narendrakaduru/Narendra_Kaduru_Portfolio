@@ -1,12 +1,12 @@
-## Getting Started with DevOps
-
+# Getting Started with DevOps
+---
 *Published on August 18, 2025*
 
 DevOps is a set of practices that combines **software development (Dev)** and **IT operations (Ops)** to shorten the development lifecycle, improve quality, and automate workflows.  
 
 ---
 
-#### DevOps Tools Overview
+### DevOps Tools Overview
 
 Welcome to my **DevOps Tools Blog**! 🎉  
 Here I will share guides, tutorials, and tips for various DevOps tools, from operating systems to CI/CD, containerization, orchestration, monitoring, automation, and more.  
@@ -15,7 +15,7 @@ Use this page as a reference and a roadmap for **tools to explore and write abou
 
 ---
 
-#### DevOps Tools Checklist
+### DevOps Tools Checklist
 
 Below is a **checklist of DevOps tools** I plan to cover.  
 You can check them off as I write individual posts for each.
@@ -37,7 +37,7 @@ You can check them off as I write individual posts for each.
 
 ---
 
-#### How I Will Post Blogs
+### How I Will Post Blogs
 
 Each tool above will have a **dedicated blog post** with:
 
@@ -49,7 +49,7 @@ Each tool above will have a **dedicated blog post** with:
 
 ---
 
-#### Example: Git Basics
+### Example: Git Basics
 
 ```bash
 # Initialize a repository
