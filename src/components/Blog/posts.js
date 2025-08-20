@@ -56,9 +56,19 @@ const blogs = [
     image: "/blogs/images/vagrant-virtualbox-custom-settings.png",
     date: "August 20, 2025",
     read_time: "6",
+    excerpt: "Guide to configuring custom VirtualBox settings in Vagrant such as memory, CPUs and VM Name.",
+    tag: "Vagrant"
+  },
+  {
+    id: 7,
+    slug: "vagrant-virtualbox-advanced-settings",
+    title: "Vagrant with VirtualBox: advanced VM Settings",
+    image: "/blogs/images/vagrant-virtualbox-advanced-settings.png",
+    date: "August 20, 2025",
+    read_time: "6",
     excerpt: "Learn how to customize VirtualBox VM settings in Vagrant including memory, CPUs, clipboard, drag-and-drop, VRAM, and provisioning.",
     tag: "Vagrant"
-  }
+  },
 ];
 
 export default blogs;
