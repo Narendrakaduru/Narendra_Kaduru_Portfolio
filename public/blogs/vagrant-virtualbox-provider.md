@@ -10,7 +10,7 @@ In this guide, we’ll walk through setting up **Vagrant with the VirtualBox pro
 Before you start, ensure you have:
 - Ubuntu system (20.04/22.04) with sudo access  
 - [VirtualBox installed](https://www.virtualbox.org/wiki/Linux_Downloads)  
-- Vagrant installed (see our [Install Vagrant on Ubuntu Guide](install_vagrant_ubuntu.md))  
+- Vagrant installed (see our [Install Vagrant on Ubuntu Guide](https://narendra-kaduru-portfolio.netlify.app/blog/vagrant-installation-on-ubuntu))
 
 Verify installations:
 
