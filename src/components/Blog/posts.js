@@ -69,6 +69,16 @@ const blogs = [
     excerpt: "Learn how to customize VirtualBox VM settings in Vagrant including memory, CPUs, clipboard, drag-and-drop, VRAM, and provisioning.",
     tag: "Vagrant"
   },
+  {
+    id: 8,
+    slug: "server-naming-convention",
+    title: "Server Naming Convention: Best Practices and Examples",
+    image: "/blogs/images/server-naming-convention.png",
+    date: "August 20, 2025",
+    read_time: "7",
+    excerpt: "Understand server naming conventions with examples like PWAPPSRV003. Learn how to standardize server names using Physical/Virtual type, OS brand, device function, and numbering.",
+    tag: "Networking"
+  }
 ];
 
 export default blogs;
