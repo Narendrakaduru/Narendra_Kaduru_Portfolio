@@ -190,6 +190,11 @@
   font-size: 24px;
 }
 
+.post-container h4 {
+  color: #fec544;
+  font-size: 20px;
+}
+
 .post-container p {
   font-size: 14px;
 }
