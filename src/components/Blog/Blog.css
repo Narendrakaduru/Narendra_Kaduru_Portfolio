@@ -96,9 +96,16 @@
 }
 
 .blog-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #ffd700;
   margin-bottom: 0.8rem;
+  height: 60px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .blog-date {
@@ -175,10 +182,12 @@
 .post-container h1 {
   text-align: center;
   color: #fec544;
+  font-size: 32px;
 }
 
 .post-container h3 {
   color: #fec544;
+  font-size: 24px;
 }
 
 .post-container p {
@@ -193,6 +202,18 @@
 .post-container a:hover {
   color: #fec544;
 }
+
+.post-container img {
+  width: 70% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.post-container > img:first-of-type {
+  width: 100% !important;
+  margin-bottom: 30px;
+}
+
 
 .blog-post table {
   width: auto;

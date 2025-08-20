@@ -49,6 +49,16 @@ const blogs = [
     excerpt: "Learn how to use Vagrant with the VirtualBox provider to create and manage full virtual machines for reproducible development environments.",
     tag: "Vagrant"
   },
+  {
+    id: 6,
+    slug: "vagrant-virtualbox-custom-settings",
+    title: "Vagrant with VirtualBox: Custom VM Settings",
+    image: "/blogs/images/vagrant-virtualbox-custom-settings.png",
+    date: "August 20, 2025",
+    read_time: "6",
+    excerpt: "Learn how to customize VirtualBox VM settings in Vagrant including memory, CPUs, clipboard, drag-and-drop, VRAM, and provisioning.",
+    tag: "Vagrant"
+  }
 ];
 
 export default blogs;
