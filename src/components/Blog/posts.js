@@ -78,7 +78,17 @@ const blogs = [
     read_time: "7",
     excerpt: "Understand server naming conventions with examples like PWAPPSRV003. Learn how to standardize server names using Physical/Virtual type, OS brand, device function, and numbering.",
     tag: "Networking"
-  }
+  },
+  {
+    "id": 9,
+    "slug": "vagrant-shell-provisioner",
+    "title": "Getting Started with Vagrant Shell Provisioner",
+    "image": "/blogs/images/vagrant-shell-provisioner.png",
+    "date": "August 21, 2025",
+    "read_time": "6",
+    "excerpt": "Learn how to use Vagrant's Shell Provisioner to automate virtual machine setup with inline commands and external scripts. Includes examples for installing software, configuring services, and running setup tasks.",
+    "tag": "Vagrant"
+  },
 ];
 
 export default blogs;

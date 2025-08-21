@@ -185,6 +185,12 @@
   font-size: 32px;
 }
 
+.post-container h2 {
+  color: #fec544;
+  font-size: 28px;
+}
+
+
 .post-container h3 {
   color: #fec544;
   font-size: 24px;
@@ -194,6 +200,17 @@
   color: #fec544;
   font-size: 20px;
 }
+
+.post-container h5 {
+  color: #fec544;
+  font-size: 18px;
+}
+
+.post-container h6 {
+  color: #fec544;
+  font-size: 16px;
+}
+
 
 .post-container p {
   font-size: 14px;
