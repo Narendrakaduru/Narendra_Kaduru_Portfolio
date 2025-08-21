@@ -89,6 +89,16 @@ const blogs = [
     "excerpt": "Learn how to use Vagrant's Shell Provisioner to automate virtual machine setup with inline commands and external scripts. Includes examples for installing software, configuring services, and running setup tasks.",
     "tag": "Vagrant"
   },
+    {
+    "id": 10,
+    "slug": "vagrant-file-provisioner",
+    "title": "Getting Started with Vagrant File Provisioner",
+    "image": "/blogs/images/vagrant-file-provisioner.png",
+    "date": "August 21, 2025",
+    "read_time": "6",
+    "excerpt": "Learn how to use Vagrant's File Provisioner to copy files and directories from your host system to the VM. Includes examples for single files, directories, and combining with the Shell Provisioner.",
+    "tag": "Vagrant"
+  }
 ];
 
 export default blogs;
