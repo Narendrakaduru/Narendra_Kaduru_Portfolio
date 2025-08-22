@@ -101,13 +101,13 @@ Ansible will automatically apply the playbook to configure the VM.
 
 ### Benefits of Using Ansible with Vagrant
 
-✅ Clean, reusable, and version-controlled configuration
-✅ Scales better than shell scripts
-✅ Human-readable YAML syntax
-✅ Rich ecosystem of modules (for databases, cloud providers, etc.)
+- ✅ Clean, reusable, and version-controlled configuration
+- ✅ Scales better than shell scripts
+- ✅ Human-readable YAML syntax
+- ✅ Rich ecosystem of modules (for databases, cloud providers, etc.)
 
-❌ Requires Ansible installed on the host
-❌ Slightly more setup than basic shell provisioning
+- ❌ Requires Ansible installed on the host
+- ❌ Slightly more setup than basic shell provisioning
 
 ### 🎯 Conclusion
 
