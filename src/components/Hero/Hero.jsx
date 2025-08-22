@@ -76,7 +76,19 @@ const Hero = () => {
               <a href="#contact" className="btn-hero me-3">
                 Hire Me
               </a>
-              <a href="/resume/Narendra_Kaduru_DevOps_Resume_2025.docx" className="btn-hero" download>
+              <a
+                href="/resume/Narendra_Kaduru_DevOps_Resume_2025.docx"
+                className="btn-hero"
+                download
+                onClick={() => {
+                  if (window.gtag) {
+                    window.gtag("event", "download_resume", {
+                      event_category: "engagement",
+                      event_label: "Narendra Kaduru Resume 2025",
+                    });
+                  }
+                }}
+              >
                 <i className="bi bi-arrow-bar-down"></i>&nbsp; Resume
               </a>
             </div>
