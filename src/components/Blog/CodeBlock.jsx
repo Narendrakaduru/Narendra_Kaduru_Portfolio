@@ -6,8 +6,13 @@ import copy from "copy-to-clipboard";
 const CodeBlock = ({ language, value }) => {
   const [copied, setCopied] = useState(false);
 
+const cleanedValue = value
+    .replace(/\r\n/g, "\n")
+    .trim()
+    .replace(/\n\s*\n/g, "\n");
+
   const handleCopy = () => {
-    copy(value);
+    copy(cleanedValue);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -34,9 +39,7 @@ const CodeBlock = ({ language, value }) => {
           {copied ? "Copied!" : "Copy"}
         </button>
       )}
-      <SyntaxHighlighter language={language} style={atomDark}>
-        {value}
-      </SyntaxHighlighter>
+      <SyntaxHighlighter language={language} style={atomDark}>{cleanedValue}</SyntaxHighlighter>
     </div>
   );
 };

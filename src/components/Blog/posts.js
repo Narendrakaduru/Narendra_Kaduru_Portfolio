@@ -75,7 +75,7 @@ const blogs = [
     title: "Server Naming Convention: Best Practices and Examples",
     image: "/blogs/images/server-naming-convention.png",
     date: "August 20, 2025",
-    read_time: "7",
+    read_time: "5",
     excerpt: "Understand server naming conventions with examples like PWAPPSRV003. Learn how to standardize server names using Physical/Virtual type, OS brand, device function, and numbering.",
     tag: "Networking"
   },
@@ -97,6 +97,16 @@ const blogs = [
     "date": "August 21, 2025",
     "read_time": "6",
     "excerpt": "Learn how to use Vagrant's File Provisioner to copy files and directories from your host system to the VM. Includes examples for single files, directories, and combining with the Shell Provisioner.",
+    "tag": "Vagrant"
+  },
+  {
+    "id": 11,
+    "slug": "vagrant-ansible-provisioner",
+    "title": "Getting Started with Vagrant Ansible Provisioner",
+    "image": "/blogs/images/vagrant-ansible-provisioner.png",
+    "date": "August 22, 2025",
+    "read_time": "5",
+    "excerpt": "Learn how to use Vagrant's Ansible Provisioner to automate VM setup with Ansible playbooks. Includes examples of installing Nginx, updating packages, and ensuring services are running.",
     "tag": "Vagrant"
   }
 ];
