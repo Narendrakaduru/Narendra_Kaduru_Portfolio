@@ -108,6 +108,16 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Learn how to use Vagrant's Ansible Provisioner to automate VM setup with Ansible playbooks. Includes examples of installing Nginx, updating packages, and ensuring services are running.",
     "tag": "Vagrant"
+  },
+  {
+    "id": 12,
+    "slug": "yaml-made-simple",
+    "title": "YAML Made Simple: The Complete Beginner’s Guide",
+    "image": "/blogs/images/yaml-made-simple.png",
+    "date": "August 24, 2025",
+    "read_time": "6",
+    "excerpt": "A beginner-friendly guide to YAML covering basics, variables, anchors, loops, and real-world DevOps examples with Ansible, Docker Compose, and Kubernetes.",
+    "tag": "Yaml"
   }
 ];
 
