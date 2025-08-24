@@ -217,6 +217,10 @@
   font-size: 14px;
 }
 
+.post-container ul li {
+  font-size: 14px;
+}
+
 .post-container a {
   color: #e0ad36;
   text-decoration: none;
