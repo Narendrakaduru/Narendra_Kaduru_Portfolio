@@ -151,6 +151,42 @@
   background-color: #e0ad36;
 }
 
+.search-bar input {
+  display: block;
+  width: 100%;
+  color: #a9adb8;
+  padding: 12px 45px;
+  border: 1px solid #232935;
+  background-color: #101624;
+  height: 52px;
+  border-radius: 7px;
+  transition: all .4s ease;
+}
+.search-bar {
+  position: relative;
+  width: 50%;
+  margin: 50px auto !important; /* centers horizontally */
+}
+
+.search-bar i{
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  color: #a9adb8;
+}
+
+.search-bar input:focus {
+  border-color: #fec544;
+  background-color: #101624;
+  color: #a9adb8;
+  outline: 0;
+  box-shadow: unset;
+}
+
+.search-bar input::placeholder {
+  color: #6c7383; /* placeholder color */
+  opacity: 1;
+}
 
 .blog-post-container {
   padding: 5rem 2rem;
