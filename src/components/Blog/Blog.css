@@ -224,37 +224,37 @@
 
 .post-container h2 {
   color: #fec544;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 
 .post-container h3 {
   color: #fec544;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .post-container h4 {
   color: #fec544;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .post-container h5 {
   color: #fec544;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .post-container h6 {
   color: #fec544;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
 .post-container p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .post-container ul li {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .post-container a {
@@ -318,5 +318,46 @@
   }
   .blog-post-container {
     padding: 3rem 0.5rem;
+  }
+
+  .post-container h1 {
+    text-align: center;
+    color: #fec544;
+    font-size: 26px;
+  }
+
+  .post-container h2 {
+    color: #fec544;
+    font-size: 24px;
+  }
+
+
+  .post-container h3 {
+    color: #fec544;
+    font-size: 22px;
+  }
+
+  .post-container h4 {
+    color: #fec544;
+    font-size: 20px;
+  }
+
+  .post-container h5 {
+    color: #fec544;
+    font-size: 18px;
+  }
+
+  .post-container h6 {
+    color: #fec544;
+    font-size: 16px;
+  }
+
+
+  .post-container p {
+    font-size: 12px;
+  }
+
+  .post-container ul li {
+    font-size: 12px;
   }
 }

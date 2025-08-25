@@ -118,7 +118,18 @@ const blogs = [
     "read_time": "6",
     "excerpt": "A beginner-friendly guide to YAML covering basics, variables, anchors, loops, and real-world DevOps examples with Ansible, Docker Compose, and Kubernetes.",
     "tag": "Yaml"
+  },
+  {
+    "id": 13,
+    "slug": "vagrant-multivm-setup",
+    "title": "Vagrant Multi-VM Setup: Build Your Own Lab Environment",
+    "image": "/blogs/images/vagrant-multivm-setup.png",
+    "date": "August 25, 2025",
+    "read_time": "5",
+    "excerpt": "Step-by-step guide to building a Vagrant multi-VM lab with Ubuntu and Windows servers, automated provisioning scripts, and networking for DevOps learning and testing.",
+    "tag": "Vagrant"
   }
+
 ];
 
 export default blogs;
