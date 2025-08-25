@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
@@ -7,51 +7,78 @@ import blogs from "./posts.js";
 import blog_user from "/blog_user.png";
 import "./Blog.css";
 
-
 const BlogList = () => {
+  const [search, setSearch] = useState("");
+
+  // Filter blogs by title based on search query
+  const filteredBlogs = blogs.filter(blog =>
+    blog.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <>
-       <HelmetProvider>
-            <Helmet>
-                <title>Narendra | Blog</title>
-            </Helmet>
-       </HelmetProvider>
-        <Navbar />
-        <section className="blog-list">
-            <div className="container">
-                <div className="st-section-heading st-style1">
-                    <h4 className="st-section-heading-title">Blogs</h4>
-                </div>
-                <div className="row align-items-center mt-7 mb-5">
-                    <div className="blog-grid">
-                        {blogs.map((blog) => (
-                        <div className="blog-card" key={blog.id}>
-                            <div className="blog-image-wrapper">
-                                <img src={blog.image} alt={blog.slug} className="blog-image"/>
-                                <span className="blog-tag">{blog.tag}</span>
-                            </div>
-                            <div className="blog-body">
-                                <h3 className="blog-title">{blog.title}</h3>
-                                <p className="blog-date">{blog.date}</p>
-                                <div className="d-flex justify-content-between mb-3">
-                                    <span>
-                                        <img src={blog_user} alt="Blog User" className="blog-user" />
-                                        &nbsp; Narendra
-                                    </span>
-                                    <span><i className="bi bi-book"></i> {blog.read_time} min read</span>
-                                </div>
-                                <p className="blog-excerpt">{blog.excerpt}</p>
-                                <Link to={`/blog/${blog.slug}`} className="read-more">
-                                Read More &nbsp;<i className="bi bi-arrow-right-short"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        ))}
+      <HelmetProvider>
+        <Helmet>
+          <title>Narendra | Blog</title>
+        </Helmet>
+      </HelmetProvider>
+      <Navbar />
+
+      <section className="blog-list">
+        <div className="container">
+          <div className="st-section-heading st-style1">
+            <h4 className="st-section-heading-title">Blogs</h4>
+          </div>
+
+          {/* Search Input */}
+          <div className="search-bar">
+            <i className="bi bi-search"></i>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search Blogs"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+
+          <div className="row align-items-center mt-4 mb-5">
+            <div className="blog-grid">
+              {filteredBlogs.length > 0 ? (
+                filteredBlogs.map((blog) => (
+                  <div className="blog-card" key={blog.id}>
+                    <div className="blog-image-wrapper">
+                      <img src={blog.image} alt={blog.slug} className="blog-image" />
+                      <span className="blog-tag">{blog.tag}</span>
                     </div>
-                </div>
+                    <div className="blog-body">
+                      <h3 className="blog-title">{blog.title}</h3>
+                      <p className="blog-date">{blog.date}</p>
+                      <div className="d-flex justify-content-between mb-3">
+                        <span>
+                          <img src={blog_user} alt="Blog User" className="blog-user" />
+                          &nbsp; Narendra
+                        </span>
+                        <span>
+                          <i className="bi bi-book"></i> {blog.read_time} min read
+                        </span>
+                      </div>
+                      <p className="blog-excerpt">{blog.excerpt}</p>
+                      <Link to={`/blog/${blog.slug}`} className="read-more">
+                        Read More &nbsp;<i className="bi bi-arrow-right-short"></i>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>No blogs found.</p>
+              )}
             </div>
-        </section>
-        <Footer/>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </>
   );
 };
