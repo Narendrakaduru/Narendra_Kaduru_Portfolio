@@ -128,6 +128,16 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Step-by-step guide to building a Vagrant multi-VM lab with Ubuntu and Windows servers, automated provisioning scripts, and networking for DevOps learning and testing.",
     "tag": "Vagrant"
+  },
+  {
+    "id": 14,
+    "slug": "install-ansible-using-pip",
+    "title": "Install Ansible on Ubuntu Using pip",
+    "image": "/blogs/images/install-ansible-using-pip.png",
+    "date": "August 26, 2025",
+    "read_time": "3",
+    "excerpt": "Learn how to install Ansible on Ubuntu step by step using Python pip. This guide covers prerequisites, environment setup, SSH configuration, and running your first Ansible ping command for automation testing.",
+    "tag": "Ansible"
   }
 
 ];
