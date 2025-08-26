@@ -360,4 +360,14 @@
   .post-container ul li {
     font-size: 12px;
   }
+  .search-bar {
+    width: 70%;
+  }
+  .search-bar input{
+    height: 40px;
+  }
+  .search-bar i{
+    top: 9px;
+    left: 15px;
+  }
 }
