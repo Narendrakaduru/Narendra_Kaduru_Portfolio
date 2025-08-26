@@ -140,7 +140,7 @@ ansible -i inventory all -m ping
 localhost     | SUCCESS => { "changed": false, "ping": "pong" }
 ```
 
-Congratulations 🎉 — you just installed Ansible, set up your first inventory, and verified connectivity with a ping test!
+Congratulations 🎉 - you just installed Ansible, set up your first inventory, and verified connectivity with a ping test!
 
 ✅ Next Steps
 
