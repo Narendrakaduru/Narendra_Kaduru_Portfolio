@@ -22,15 +22,16 @@ With Vagrant, you can:
 
 ### Multi-VM Setup
 
-We’ll define 3 servers:
+We’ll define 4 servers:
 
 - srv1 - ubuntu server
 - srv2 - ubuntu desktop
-- srv3 - windows
+- srv3 - centos server
+- srv4 - windows
 
 Each server has:
 
-- A static public IP which will be accessable to all your network (192.168.1.91 - 192.168.1.93)
+- A static IP (192.168.1.91 - 192.168.1.94)
 - A hostname (like vldocsrv091)
 - VirtualBox customizations (memory, CPU, clipboard, VRAM, etc.)
 
@@ -67,11 +68,24 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "srv3" do |srv3|
-    srv3.vm.box = "gusztavvargadr/windows-10"
+    srv3.vm.box = "bento/centos-stream-9"
     srv3.vm.network "public_network", ip: "192.168.1.93"
     srv3.vm.hostname = "vldocsrv093"
     srv3.vm.provider "virtualbox" do |vb|
       vb.name = "Vagrant-VLDOCSRV093"
+      vb.memory = 4096
+      vb.cpus = 2
+    end
+    srv3.vm.provision "shell", path: "scripts/update.sh"
+    srv3.vm.provision "shell", path: "scripts/create_user.sh"
+  end
+
+  config.vm.define "srv4" do |srv4|
+    srv4.vm.box = "gusztavvargadr/windows-10"
+    srv4.vm.network "public_network", ip: "192.168.1.94"
+    srv4.vm.hostname = "vldocsrv094"
+    srv4.vm.provider "virtualbox" do |vb|
+      vb.name = "Vagrant-VLDOCSRV094"
       vb.memory = 4096
       vb.cpus = 2
     end
