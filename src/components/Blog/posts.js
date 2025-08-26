@@ -138,6 +138,26 @@ const blogs = [
     "read_time": "3",
     "excerpt": "Learn how to install Ansible on Ubuntu step by step using Python pip. This guide covers prerequisites, environment setup, SSH configuration, and running your first Ansible ping command for automation testing.",
     "tag": "Ansible"
+  },
+  {
+    "id": 15,
+    "slug": "ansible-apt-module",
+    "title": "Mastering the Ansible apt Module",
+    "image": "/blogs/images/ansible-apt-module.png",
+    "date": "August 26, 2025",
+    "read_time": "4",
+    "excerpt": "Learn how to use the Ansible apt module to automate package management on Debian and Ubuntu systems. This guide covers installing, updating, and removing packages with real-world playbook examples.",
+    "tag": "Ansible"
+  },
+  {
+    "id": 15,
+    "slug": "ansible-yum-module",
+    "title": "Mastering Ansible yum Module",
+    "image": "/blogs/images/ansible-yum-module.png",
+    "date": "August 26, 2025",
+    "read_time": "4",
+    "excerpt": "Learn how to use the Ansible yum module to install, update, and remove packages on RHEL-based systems like CentOS, Rocky Linux, and Fedora. This guide covers parameters, examples, and best practices for efficient package management.",
+    "tag": "Ansible"
   }
 
 ];
