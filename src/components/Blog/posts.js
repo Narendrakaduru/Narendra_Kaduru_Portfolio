@@ -158,6 +158,16 @@ const blogs = [
     "read_time": "4",
     "excerpt": "Learn how to use the Ansible yum module to install, update, and remove packages on RHEL-based systems like CentOS, Rocky Linux, and Fedora. This guide covers parameters, examples, and best practices for efficient package management.",
     "tag": "Ansible"
+  },
+  {
+    "id": 17,
+    "slug": "ansible-package-module",
+    "title": "How to Manage Packages with Ansible: A Complete Guide",
+    "image": "/blogs/images/ansible-package-module.png",
+    "date": "August 28, 2025",
+    "read_time": "5",
+    "excerpt": "Learn how to use the Ansible package module for consistent package management across multiple Linux distributions. This guide covers installation, removal, updating, and using conditions with real-world examples.",
+    "tag": "Ansible"
   }
 
 ];
