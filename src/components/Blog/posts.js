@@ -164,7 +164,7 @@ const blogs = [
     "slug": "ansible-package-module",
     "title": "How to Manage Packages with Ansible: A Complete Guide",
     "image": "/blogs/images/ansible-package-module.png",
-    "date": "August 28, 2025",
+    "date": "August 29, 2025",
     "read_time": "5",
     "excerpt": "Learn how to use the Ansible package module for consistent package management across multiple Linux distributions. This guide covers installation, removal, updating, and using conditions with real-world examples.",
     "tag": "Ansible"
