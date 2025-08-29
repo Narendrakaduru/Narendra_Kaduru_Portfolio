@@ -1,56 +1,53 @@
-name: Blog Image Check
+name: Validate Blog Branch
 
 on:
   push:
-    paths:
-      - 'public/blogs/images/*.png'
-
-permissions:
-  issues: write
+    branches:
+      - "*"
 
 jobs:
-  check-image:
+  validate-blog:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Verify ansible-systemd-module.png exists
-        id: check_image
+      - name: Set branch name
+        run: echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Check if issues.md references blog image and markdown
         run: |
-          if [ -f public/blogs/images/ansible-systemd-module.png ]; then
-            echo "found=true" >> $GITHUB_OUTPUT
-          else
-            echo "found=false" >> $GITHUB_OUTPUT
+          FILE="issues.md"
+          IMAGE_PATH="blogs/images/${BRANCH_NAME}.png"
+          MARKDOWN_PATH="blogs/${BRANCH_NAME}.md"
+
+          if [ ! -f "$FILE" ]; then
+            echo "❌ $FILE not found!"
+            exit 1
           fi
 
-      - name: Update Issue #21 checkbox
-        if: steps.check_image.outputs.found == 'true'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issue_number = 21;
+          # Check for image reference
+          if grep -q "$IMAGE_PATH" "$FILE"; then
+            echo "✅ $IMAGE_PATH found in $FILE"
+          else
+            echo "❌ $IMAGE_PATH missing in $FILE"
+            exit 1
+          fi
 
-            // Get the issue body
-            const issue = await github.rest.issues.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number
-            });
+          # Check for markdown reference
+          if grep -q "$MARKDOWN_PATH" "$FILE"; then
+            echo "✅ $MARKDOWN_PATH found in $FILE"
+          else
+            echo "❌ $MARKDOWN_PATH missing in $FILE"
+            exit 1
+          fi
 
-            let body = issue.data.body;
-
-            // Replace unchecked box with checked one
-            body = body.replace(
-              "- [ ] blogs/images/ansible-systemd-module.png",
-              "- [x] blogs/images/ansible-systemd-module.png"
-            );
-
-            // Update issue
-            await github.rest.issues.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number,
-              body
-            });
+      - name: Check if src/components/Blog was updated
+        run: |
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^src/components/Blog"; then
+            echo "✅ src/components/Blog was updated"
+          else
+            echo "❌ src/components/Blog not updated"
+            exit 1
+          fi
