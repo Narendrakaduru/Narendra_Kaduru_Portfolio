@@ -14,10 +14,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Verify blog image exists
+        id: check_image
         run: |
           if [ ! -f public/blogs/images/ansible-systemd-module.png ]; then
-            echo "❌ blogs/images/ansible-systemd-module.png not found!"
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "❌ public/blogs/images/ansible-systemd-module.png not found!"
             exit 1
           else
-            echo "✅ blogs/images/ansible-systemd-module.png exists."
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "✅ public/blogs/images/ansible-systemd-module.png exists."
           fi
+
+      - name: Comment on Issue #21
+        if: steps.check_image.outputs.found == 'true'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: 21
+          body: |
+            ✅ The blog image was found:  
+            **Path:** `blogs/images/ansible-systemd-module.png`
+            Commit: ${{ github.sha }}
