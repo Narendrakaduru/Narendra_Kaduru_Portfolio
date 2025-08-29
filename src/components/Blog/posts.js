@@ -168,6 +168,16 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Learn how to use the Ansible package module for consistent package management across multiple Linux distributions. This guide covers installation, removal, updating, and using conditions with real-world examples.",
     "tag": "Ansible"
+  },
+  {
+    "id": 18,
+    "slug": "ansible-service-module",
+    "title": "Ansible Service Module Explained with Real-Time Examples",
+    "image": "/blogs/images/ansible-service-module.png",
+    "date": "August 29, 2025",
+    "read_time": "5",
+    "excerpt": "Learn how to use the Ansible service module to start, stop, restart, and enable services across different Linux distributions. This guide provides real-world playbook examples and best practices for effective service management.",
+    "tag": "Ansible"
   }
 
 ];
