@@ -25,13 +25,13 @@ jobs:
           else
             echo "✅ $IMAGE exists."
           fi
-      
-      - name: Check src/components/Blog updates
+
+      - name: Check src/components/Blog/posts.js update
         run: |
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^src/components/Blog"; then
-            echo "✅ src/components/Blog was updated"
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^src/components/Blog/posts.js"; then
+            echo "✅ src/components/Blog/posts.js was updated"
           else
-            echo "❌ src/components/Blog not updated"
+            echo "❌ src/components/Blog/posts.js not updated"
             exit 1
           fi
 
