@@ -15,7 +15,7 @@ jobs:
 
       - name: Verify blog image exists
         run: |
-          if [ ! -f blogs/images/ansible-systemd-module.png ]; then
+          if [ ! -f public/blogs/images/ansible-systemd-module.png ]; then
             echo "❌ blogs/images/ansible-systemd-module.png not found!"
             exit 1
           else
