@@ -178,16 +178,6 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Learn how to use the Ansible service module to start, stop, restart, and enable services across different Linux distributions. This guide provides real-world playbook examples and best practices for effective service management.",
     "tag": "Ansible"
-  },
-  {
-    "id": 19,
-    "slug": "ansible-systemd-module",
-    "title": "Managing Systemd Services with Ansible: The Modern Approach",
-    "image": "/blogs/images/ansible-systemd-module.png",
-    "date": "August 29, 2025",
-    "read_time": "5",
-    "excerpt": "Master managing systemd services with Ansible. Learn how to start, stop, restart, enable, reload, and mask services in modern Linux environments with practical playbook examples and best practices.",
-    "tag": "Ansible"
   }
 
 ];
