@@ -1,49 +1,42 @@
-name: Validate Blog Branch
+name: Check Blog Files
 
 on:
   push:
-    branches:
-      - "*"
+    branches-ignore:
+      - main  # run on all branches except main
 
 jobs:
-  validate-blog:
+  check-blog-files:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set branch name
         run: echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
-      - name: Check if issues.md references blog image and markdown
+      - name: Check blog image
         run: |
-          FILE="issues.md"
-          IMAGE_PATH="blogs/images/${BRANCH_NAME}.png"
-          MARKDOWN_PATH="blogs/${BRANCH_NAME}.md"
-
-          if [ ! -f "$FILE" ]; then
-            echo "❌ $FILE not found!"
+          IMAGE="public/blogs/images/${BRANCH_NAME}.png"
+          if [ ! -f "$IMAGE" ]; then
+            echo "❌ $IMAGE not found!"
             exit 1
-          fi
-
-          # Check for image reference
-          if grep -q "$IMAGE_PATH" "$FILE"; then
-            echo "✅ $IMAGE_PATH found in $FILE"
           else
-            echo "❌ $IMAGE_PATH missing in $FILE"
-            exit 1
+            echo "✅ $IMAGE exists."
           fi
 
-          # Check for markdown reference
-          if grep -q "$MARKDOWN_PATH" "$FILE"; then
-            echo "✅ $MARKDOWN_PATH found in $FILE"
+      - name: Check blog markdown
+        run: |
+          MD_FILE="public/blogs/${BRANCH_NAME}.md"
+          if [ ! -f "$MD_FILE" ]; then
+            echo "❌ $MD_FILE not found!"
+            exit 1
           else
-            echo "❌ $MARKDOWN_PATH missing in $FILE"
-            exit 1
+            echo "✅ $MD_FILE exists."
           fi
 
-      - name: Check if src/components/Blog was updated
+      - name: Check src/components/Blog updates
         run: |
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^src/components/Blog"; then
             echo "✅ src/components/Blog was updated"
