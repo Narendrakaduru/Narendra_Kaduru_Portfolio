@@ -1,36 +1,56 @@
-name: Check Blog Image
+name: Blog Image Check
 
 on:
   push:
-    branches-ignore:
-      - main
+    paths:
+      - 'public/blogs/images/*.png'
+
+permissions:
+  issues: write
 
 jobs:
   check-image:
     runs-on: ubuntu-latest
-    container: alpine:3.19
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Verify blog image exists
+      - name: Verify ansible-systemd-module.png exists
         id: check_image
         run: |
-          if [ ! -f public/blogs/images/ansible-systemd-module.png ]; then
-            echo "found=false" >> $GITHUB_OUTPUT
-            echo "❌ public/blogs/images/ansible-systemd-module.png not found!"
-            exit 1
-          else
+          if [ -f public/blogs/images/ansible-systemd-module.png ]; then
             echo "found=true" >> $GITHUB_OUTPUT
-            echo "✅ public/blogs/images/ansible-systemd-module.png exists."
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Comment on Issue #21
+      - name: Update Issue #21 checkbox
         if: steps.check_image.outputs.found == 'true'
-        uses: peter-evans/create-or-update-comment@v4
+        uses: actions/github-script@v7
         with:
-          issue-number: 21
-          body: |
-            ✅ The blog image was found:  
-            **Path:** `blogs/images/ansible-systemd-module.png`
-            Commit: ${{ github.sha }}
+          script: |
+            const issue_number = 21;
+
+            // Get the issue body
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number
+            });
+
+            let body = issue.data.body;
+
+            // Replace unchecked box with checked one
+            body = body.replace(
+              "- [ ] blogs/images/ansible-systemd-module.png",
+              "- [x] blogs/images/ansible-systemd-module.png"
+            );
+
+            // Update issue
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body
+            });
