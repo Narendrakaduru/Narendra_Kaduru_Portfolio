@@ -1,0 +1,23 @@
+name: Check Blog Image
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  check-image:
+    runs-on: ubuntu-latest
+    container: alpine:3.19
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify blog image exists
+        run: |
+          if [ ! -f blogs/images/ansible-systemd-module.png ]; then
+            echo "❌ blogs/images/ansible-systemd-module.png not found!"
+            exit 1
+          else
+            echo "✅ blogs/images/ansible-systemd-module.png exists."
+          fi
