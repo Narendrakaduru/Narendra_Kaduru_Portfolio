@@ -31,7 +31,7 @@ This automation ensures that all your servers follow the same user management po
 
 The simplest example is creating a new user:
 
-```bash
+```yaml
 - name: Create a new user 'alice'
   hosts: all
   become: true
@@ -40,9 +40,22 @@ The simplest example is creating a new user:
       ansible.builtin.user:
         name: alice
         state: present
+        shell: /bin/bash
+        create_home: yes
 ```
 
-This ensures the user alice exists on all target systems.
+👉 This ensures the alice user exists with a home directory and Bash shell on all target hosts.
+
+### Modify an Existing User
+
+```yaml
+- name: Update user 'alice' shell
+  ansible.builtin.user:
+    name: alice
+    shell: /bin/zsh
+```
+
+👉 Ensures the `alice` user always has Zsh as default shell.
 
 ### Managing Passwords Securely
 
@@ -55,7 +68,7 @@ This is where **`python3-passlib`** comes in. Passlib is a Python library that a
 
 #### Example: Creating a User with a Hashed Password
 
-```bash
+```yaml
 - name: Create user with password
   hosts: all
   become: true
@@ -95,7 +108,7 @@ Never hardcode plain text passwords in playbooks. Instead, store them in **Ansib
 
 Assigning users to groups is another critical part of system management. You can define a primary group and add users to supplementary groups.
 
-```bash
+```yaml
 - name: Create user 'devuser' with group membership
   hosts: all
   become: true
@@ -118,7 +131,7 @@ Here:
 
 For secure, passwordless login, you can use SSH keys instead of passwords.
 
-```bash
+```yaml
 - name: Add user 'deploy' with SSH key
   hosts: all
   become: true
@@ -142,7 +155,7 @@ This ensures that the `deploy` user can log in securely with the provided SSH ke
 
 Removing old or unused accounts is just as important for security.
 
-```bash
+```yaml
 - name: Remove user 'olduser'
   hosts: all
   become: true
