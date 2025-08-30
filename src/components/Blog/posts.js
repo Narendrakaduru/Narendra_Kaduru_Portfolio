@@ -188,6 +188,16 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Master managing systemd services with Ansible. Learn how to start, stop, restart, enable, reload, and mask services in modern Linux environments with practical playbook examples and best practices.",
     "tag": "Ansible"
+  },
+  {
+    "id": 20,
+    "slug": "ansible-user-module",
+    "title": "Automating User Management with Ansible User Module",
+    "image": "/blogs/images/ansible-user-module.png",
+    "date": "August 30, 2025",
+    "read_time": "6",
+    "excerpt": "Simplify Linux user administration with Ansible's user module. Learn how to manage users, groups, passwords, and SSH keys - including secure password hashing with python3-passlib - through practical examples and best practices.",
+    "tag": "Ansible"
   }
 
 ];
