@@ -198,6 +198,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Simplify Linux user administration with Ansible's user module. Learn how to manage users, groups, passwords, and SSH keys - including secure password hashing with python3-passlib - through practical examples and best practices.",
     "tag": "Ansible"
+  },
+  {
+    "id": 21,
+    "slug": "ansible-file-module",
+    "title": "Automating Files & Permissions with Ansible File Module",
+    "image": "/blogs/images/ansible-file-module.png",
+    "date": "September 2, 2025",
+    "read_time": "6",
+    "excerpt": "Learn how to automate file and directory management with Ansible's file module. From creating and deleting files to setting permissions, ownership, and symbolic links — master real-world playbook examples and best practices for managing files at scale.",
+    "tag": "Ansible"
   }
 
 ];
