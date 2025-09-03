@@ -208,6 +208,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Learn how to automate file and directory management with Ansible's file module. From creating and deleting files to setting permissions, ownership, and symbolic links — master real-world playbook examples and best practices for managing files at scale.",
     "tag": "Ansible"
+  },
+  {
+    "id": 22,
+    "slug": "linux-networking-commands",
+    "title": "20 Linux Networking Commands Every Sysadmin Should Know",
+    "image": "/blogs/images/linux-networking-commands.png",
+    "date": "September 3, 2025",
+    "read_time": "7",
+    "excerpt": "Master essential Linux networking commands that every sysadmin should know. From checking network interfaces and monitoring connections to troubleshooting DNS, routing, and firewalls — this guide covers the top 20 commands with practical examples.",
+    "tag": "Linux"
   }
 
 ];
