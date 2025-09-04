@@ -1,15 +1,17 @@
-# 20 Linux Networking Commands Every Sysadmin Should Know
+# 20 Essential Linux Networking Commands for Beginners
 ---
 
-Master the Tools to Monitor, Troubleshoot, and Optimize Your Network
+Learn the Basics to Check, Fix, and Understand Your Network
 
-### Introduction
+### 🌟 Introduction
 
-If you are a system administrator, knowing a few networking commands in Linux is necessary. Whether you are trying to troubleshoot a connectivity issue, manage services, or configure firewall rules, the terminal is your place of work, and the command line is your tool. In this article, we will go through 20 critical commands for system administrators, with examples, notes, and best practices.
+If you are new to Linux system administration or just getting started with networking, learning some basic commands will make your life much easier. These commands help you check network settings, test connections, transfer files, and even troubleshoot issues.
 
-#### 1\. `ifconfig` (or `ip a`)
+In this guide, we'll go through **20 must-know networking commands** with simple explanations and examples so you can practice them right away.
 
-**Purpose:** Display network interfaces and IP addresses.
+#### 1\. `ip a` (or `ifconfig`)
+
+**What it does:** Shows your computer's network interfaces and IP addresses.
 
 **Modern Alternative:** `ip address show`
 
@@ -17,9 +19,11 @@ If you are a system administrator, knowing a few networking commands in Linux is
 ip a
 ```
 
+👉 Use this when you want to know **your system's IP address**.
+
 #### 2\. `ping`
 
-**Purpose:** Test the reachability of a host.
+**What it does:** Tests if another computer/website is reachable.
 
 ```bash
 ping google.com
@@ -27,17 +31,21 @@ ping google.com
 
 **Pro tip:** Use `-c 5` to limit ping count.
 
+```bash
+ping -c 5 google.com
+```
+
 #### 3\. `traceroute` (or `tracepath`)
 
-**Purpose:** Show the path packets take to a destination.
+**What it does:** Shows the path your data takes to reach a server.
 
 ```bash
 traceroute google.com
 ```
 
-#### 4\. `netstat` (or `ss`)
+#### `ss` (modern replacement for `netstat`)
 
-**Purpose:** View network connections, listening ports, and routing tables.
+**What it does:** Lists active network connections and open ports.
 
 **Modern Alternative:** `ss -tuln`
 
@@ -45,27 +53,29 @@ traceroute google.com
 ss -tuln
 ```
 
-#### 5\. `nslookup` / `dig`
+👉 Great for checking which ports your system is listening on.
 
-**Purpose:** Perform DNS lookups.
+#### 5\. `dig` (or `nslookup`)
+
+**What it does:** Checks DNS records of a website.
 
 ```bash
 dig openai.com
 ```
 
-**Tip:** `dig +short` gives concise output.
+**Tip:** 👉 Use dig +short for a simple output.
 
-#### 6\. `hostname` / `hostname -I`
+#### 6\. `hostname -I`
 
-**Purpose:** Display the system's hostname and IP address.
+**What it does:** Shows your system's IP address.
 
 ```bash
 hostname -I
 ```
 
-#### 7\. `ip route`
+#### 7. ip route
 
-**Purpose:** View or configure routing tables.
+What it does: Displays the routing table (how your system sends traffic).
 
 ```bash
 ip route show
@@ -73,17 +83,19 @@ ip route show
 
 #### 8\. `nmap`
 
-**Purpose:** Network scanner to discover hosts and services.
+**What it does:** Scans networks to find live hosts and open ports.
 
 ```bash
 nmap -sP 192.168.1.0/24
 ```
 
+⚠️ Needs root access. Use responsibly!
+
 **Warning:** Requires root; use responsibly.
 
 #### 9\. `curl` / `wget`
 
-**Purpose:** Retrieve content from URLs.
+**What it does:** Downloads data from a URL.
 
 ```bash
 curl -I https://example.com
@@ -97,11 +109,11 @@ curl -I https://example.com
 tcpdump -i eth0
 ```
 
-**Tip:** Use filters to narrow output.
+**Tip:** 👉 Use filters (like `port 80`) to avoid too much output.
 
 #### 11\. `ethtool`
 
-**Purpose:** Display Ethernet device settings.
+**What it does:** Shows details of a network card.
 
 ```bash
 ethtool eth0
@@ -109,23 +121,23 @@ ethtool eth0
 
 #### 12\. `nmcli`
 
-**Purpose:** Command-line interface for NetworkManager.
+**What it does:** Manages connections using NetworkManager.
 
 ```bash
 nmcli device status
 ```
 
-#### 13\. `sshd` / `systemctl status ssh`
+#### 13\. `systemctl status ssh`
 
-**Purpose:** Manage and verify SSH services.
+**What it does:** Checks if SSH service is running.
 
 ```bash
 systemctl status ssh
 ```
 
-#### 14\. `iptables` / `ufw`
+#### 14\. `ufw` (or `iptables`)
 
-**Purpose:** Manage firewall rules.
+**What it does:** Manages firewall rules.
 
 ```bash
 iptables -L
@@ -139,15 +151,15 @@ ufw status verbose
 
 #### 15\. `ip link`
 
-**Purpose:** Show or modify network interfaces.
+**What it does:** Shows details of all network interfaces.
 
 ```bash
 ip link show
 ```
 
-#### 16\. `netplan` / `networkctl`
+#### 16\. `netplan` (Ubuntu 18+)
 
-**Purpose:** Manage network configuration (for Ubuntu 18+).
+**What it does:** Applies network configuration changes.
 
 ```bash
 netplan apply
@@ -155,7 +167,7 @@ netplan apply
 
 #### 17\. `whois`
 
-**Purpose:** Get ownership info for domain names.
+**What it does:** Shows info about domain ownership.
 
 ```bash
 whois openai.com
@@ -163,30 +175,30 @@ whois openai.com
 
 #### 18\. `scp` / `rsync`
 
-**Purpose:** Transfer files over SSH.
+**What it does:** Copies files securely between computers.
 
 ```bash
 scp file.txt user@server:/path
 ```
 
-#### 19\. `arp` / `ip neigh`
+#### 19\. `ip neigh` (or `arp`)
 
-**Purpose:** View or manipulate the ARP table.
+**What it does:** Displays the ARP table (nearby devices).
 
 ```bash
 ip neigh
 ```
 
-#### 20\. `netcat` (`nc`)
+#### 20\. `nc` (netcat)
 
-**Purpose:** TCP/IP debugging and port scanning.
+**What it does:** Checks open ports or creates quick TCP connections.
 
 ```bash
 nc -zv example.com 80
 ```
 
-**Bonus:** Use as a basic TCP server or client.
+**Tip:** 👉 Can also be used as a simple server or client.
 
 ### 🎯 Conclusion
 
-Learning these commands will not only assist you with day-to-day management, but they will also help you to feel more confident in diagnosing and remediating complex problems on the network as well. So make sure to practice these commands in a controlled environment, and always double-check syntax before updating in a production environment!
+These 20 commands are the **building blocks of Linux networking**. As a beginner, don't worry about memorizing everything at once---just start practicing one by one. Over time, you'll naturally remember the most useful ones and feel more confident troubleshooting or managing networks.
