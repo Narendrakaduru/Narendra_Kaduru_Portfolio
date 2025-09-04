@@ -212,7 +212,7 @@ const blogs = [
   {
     "id": 22,
     "slug": "linux-networking-commands",
-    "title": "20 Linux Networking Commands Every Sysadmin Should Know",
+    "title": "20 Essential Linux Networking Commands for Beginners",
     "image": "/blogs/images/linux-networking-commands.png",
     "date": "September 3, 2025",
     "read_time": "7",
