@@ -228,6 +228,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Learn how to use the Ansible copy module to transfer files, set permissions, and manage backups across servers. This guide includes practical playbook examples to simplify file management and automation.",
     "tag": "Ansible"
+  },
+  {
+    "id": 24,
+    "slug": "ansible-unarchive-module",
+    "title": "Ansible Archive vs Unarchive: Automating Compression & Extraction",
+    "image": "/blogs/images/ansible-unarchive-module.png",
+    "date": "September 5, 2025",
+    "read_time": "8",
+    "excerpt": "Explore the differences between Ansible's archive and unarchive modules. Learn how to automate file compression and extraction with practical use cases, parameters, and playbook examples for backups, packaging, and deployments.",
+    "tag": "Ansible"
   }
 
 ];
