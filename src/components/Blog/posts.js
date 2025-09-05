@@ -238,6 +238,16 @@ const blogs = [
     "read_time": "8",
     "excerpt": "Explore the differences between Ansible's archive and unarchive modules. Learn how to automate file compression and extraction with practical use cases, parameters, and playbook examples for backups, packaging, and deployments.",
     "tag": "Ansible"
+  },
+  {
+    "id": 25,
+    "slug": "ansible-error-handling",
+    "title": "Mastering Error Handling in Ansible: Register, Failed_when, and Block/Rescue/Always",
+    "image": "/blogs/images/ansible-error-handling.png",
+    "date": "September 5, 2025",
+    "read_time": "4",
+    "excerpt": "Learn how to handle errors in Ansible like a pro using register, failed_when, and block/rescue/always. Make your playbooks smarter, more resilient, and fault-tolerant with real-world examples.",
+    "tag": "Ansible"
   }
 
 ];
