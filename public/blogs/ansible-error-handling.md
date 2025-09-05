@@ -69,7 +69,7 @@ Think of these like **try / catch / finally** in programming languages.
 
 #### Example: Safe Package Installation
 
-```
+```yaml
 - block:
     - name: Install custom package
       apt:
