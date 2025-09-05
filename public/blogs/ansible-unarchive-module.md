@@ -88,6 +88,27 @@ It's the reverse of **unarchive**, designed for **backups, packaging, and transf
 
 👉 Ideal for systems or environments where `.zip` is preferred.
 
+##### Exclude Files or Folders While Archiving
+
+```yaml
+- name: Archive app but exclude cache and temp files
+  ansible.builtin.archive:
+    path: /var/www/myapp/
+    dest: /tmp/myapp.tar.gz
+    format: gz
+    exclude_path:
+      - "*.tmp"
+      - "cache/"
+```
+
+✅ This will:
+
+-   Archive everything in `/var/www/myapp/`.
+-   Skip all files ending in `.tmp`.
+-   Exclude the entire `cache/` directory.
+
+👉 Perfect when you want a **clean backup or package** without clutter from temporary files, caches, or logs.
+
 ##### Common Use Cases
 
 1️⃣ Backing up `/etc`, `/home`, or `/var/log` directories.\
@@ -184,27 +205,6 @@ Extract Only Specific Directory from Archive
 ```
 
 👉 This extracts **only the `app/static` folder** instead of everything.
-
-Exclude Files or Folders While Archiving
-
-```yaml
-- name: Archive app but exclude cache and temp files
-  ansible.builtin.archive:
-    path: /var/www/myapp/
-    dest: /tmp/myapp.tar.gz
-    format: gz
-    exclude_path:
-      - "*.tmp"
-      - "cache/"
-```
-
-✅ This will:
-
--   Archive everything in `/var/www/myapp/`.
--   Skip all files ending in `.tmp`.
--   Exclude the entire `cache/` directory.
-
-👉 Perfect when you want a **clean backup or package** without clutter from temporary files, caches, or logs.
 
 👉 In short:\
 `extra_opts` = **pass extra arguments to tar/unzip** for advanced extraction control.
