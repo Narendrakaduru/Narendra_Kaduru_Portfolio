@@ -125,7 +125,8 @@ export default function Contact() {
                 </div>
                 <div className="st-single-info-details">
                   <h4>Address</h4>
-                  <span>Parameshwari Nagar, Mulapet, Nellore</span>
+                  <span>Parameshwari Nagar,</span>
+                  <span> Mulapet, Nellore</span>
                   <span>Andhra Pradesh, India 524001</span>
                 </div>
               </div>
