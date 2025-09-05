@@ -218,6 +218,16 @@ const blogs = [
     "read_time": "7",
     "excerpt": "Master essential Linux networking commands that every sysadmin should know. From checking network interfaces and monitoring connections to troubleshooting DNS, routing, and firewalls — this guide covers the top 20 commands with practical examples.",
     "tag": "Linux"
+  },
+  {
+    "id": 23,
+    "slug": "ansible-copy-module",
+    "title": "Copying Files Across Servers with Ansible Copy Module",
+    "image": "/blogs/images/ansible-copy-module.png",
+    "date": "September 5, 2025",
+    "read_time": "6",
+    "excerpt": "Learn how to use the Ansible copy module to transfer files, set permissions, and manage backups across servers. This guide includes practical playbook examples to simplify file management and automation.",
+    "tag": "Ansible"
   }
 
 ];
