@@ -268,6 +268,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Automate Docker container management with Ansible's docker_container module. Learn how to run, stop, remove, and restart containers with clear playbook examples for real-world use cases.",
     "tag": "Ansible"
+  },
+  {
+    "id": 28,
+    "slug": "ansible-aws-ec2-instance",
+    "title": "Provisioning AWS EC2 Instances with Ansible EC2_Instance Module",
+    "image": "/blogs/images/ansible-aws-ec2-instance.png",
+    "date": "September 9, 2025",
+    "read_time": "6",
+    "excerpt": "Learn how to automate provisioning AWS EC2 instances using Ansible's ec2_instance module. Step-by-step playbooks for launching, tagging, and terminating EC2 instances with real-world examples.",
+    "tag": "Ansible"
   }
 
 ];
