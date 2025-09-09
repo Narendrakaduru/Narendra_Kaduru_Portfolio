@@ -248,6 +248,16 @@ const blogs = [
     "read_time": "4",
     "excerpt": "Learn how to handle errors in Ansible like a pro using register, failed_when, and block/rescue/always. Make your playbooks smarter, more resilient, and fault-tolerant with real-world examples.",
     "tag": "Ansible"
+  },
+  {
+    "id": 26,
+    "slug": "ansible-docker-image-module",
+    "title": "Managing Docker Images with Ansible Docker_Image Module",
+    "image": "/blogs/images/ansible-docker-image-module.png",
+    "date": "September 9, 2025",
+    "read_time": "5",
+    "excerpt": "Learn how to build, push, pull, archive, and load Docker images using the Ansible docker_image module. Step-by-step playbooks for Node.js apps, Nginx, and image lifecycle management.",
+    "tag": "Ansible"
   }
 
 ];
