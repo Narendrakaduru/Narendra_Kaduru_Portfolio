@@ -36,14 +36,14 @@ Default region name [None]: ap-south-1
 Default output format [None]:
 ```
 
-### Install Required Boto Packages
+### Install Python AWS SDK (Boto3 + Botocore)
 
 Before running the playbook, make sure the AWS Python SDK libraries are available on your Ansible control node. These libraries (`boto3` and `botocore`) allow Ansible to communicate with AWS services.
 
 ```bash
 pip3 install boto3 botocore
 ```
-This step is mandatory - without these dependencies, the `ec2_instance` module cannot interact with AWS.
+This step is mandatory — without these, Ansible cannot talk to AWS.
 
 ### Directory Structure 📂
 
@@ -114,7 +114,7 @@ security_group: Ansible-Ec2-SG
 192.168.1.100 ansible_user=nani ansible_ssh_private_key_file=~/.ssh/id_ed25519_vldocsrv0100
 ```
 
-### 2\. Stopping an EC2 Instance → stop_ec2.yml
+### 2\. Stop EC2 Instance → stop_ec2.yml
 
 Once your EC2 instance is launched, you may want to stop it to save costs when it's not in use. Ansible makes this easy with the same `ec2_instance` module.
 
@@ -144,7 +144,7 @@ Once your EC2 instance is launched, you may want to stop it to save costs when i
 - EBS (storage) charges still apply.
 - You can start it again later with a similar playbook.
 
-### 3\. Starting an EC2 Instance → start_ec2.yml
+### 3\. Start EC2 Instance → start_ec2.yml
 
 If you’ve previously stopped an instance, you can bring it back online with this playbook:
 
