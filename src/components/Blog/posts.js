@@ -258,6 +258,16 @@ const blogs = [
     "read_time": "5",
     "excerpt": "Learn how to build, push, pull, archive, and load Docker images using the Ansible docker_image module. Step-by-step playbooks for Node.js apps, Nginx, and image lifecycle management.",
     "tag": "Ansible"
+  },
+  {
+    "id": 27,
+    "slug": "ansible-docker-container-module",
+    "title": "Managing Docker Containers with Ansible Docker_Container Module",
+    "image": "/blogs/images/ansible-docker-container-module.png",
+    "date": "September 9, 2025",
+    "read_time": "6",
+    "excerpt": "Automate Docker container management with Ansible's docker_container module. Learn how to run, stop, remove, and restart containers with clear playbook examples for real-world use cases.",
+    "tag": "Ansible"
   }
 
 ];
