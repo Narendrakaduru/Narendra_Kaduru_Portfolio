@@ -278,6 +278,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Learn how to automate provisioning AWS EC2 instances using Ansible's ec2_instance module. Step-by-step playbooks for launching, tagging, and terminating EC2 instances with real-world examples.",
     "tag": "Ansible"
+  },
+  {
+    "id": 29,
+    "slug": "ansible-roles-and-galaxy",
+    "title": "Ansible Roles & Galaxy: Structuring and Reusing Automation",
+    "image": "/blogs/images/ansible-roles-and-galaxy.png",
+    "date": "September 10, 2025",
+    "read_time": "6",
+    "excerpt": "Discover how Ansible Roles help you organize automation into clean, reusable components, and how Ansible Galaxy enables sharing and reusing pre-built roles across projects.",
+    "tag": "Ansible"
   }
 
 ];
