@@ -288,6 +288,16 @@ const blogs = [
     "read_time": "6",
     "excerpt": "Discover how Ansible Roles help you organize automation into clean, reusable components, and how Ansible Galaxy enables sharing and reusing pre-built roles across projects.",
     "tag": "Ansible"
+  },
+  {
+    "id": 30,
+    "slug": "ansible-vault",
+    "title": "Ansible Vault for Secure Infrastructure Automation Management",
+    "image": "/blogs/images/ansible-vault.png",
+    "date": "September 11, 2025",
+    "read_time": "4",
+    "excerpt": "Learn how Ansible Vault helps you encrypt and manage sensitive data like passwords, API keys, and credentials securely within your playbooks. Step-by-step guide with commands, best practices, and examples.",
+    "tag": "Ansible"
   }
 
 ];
