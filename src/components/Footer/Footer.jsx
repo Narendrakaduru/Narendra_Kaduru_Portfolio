@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="st-copyright-text">
             © {new Date().getFullYear()}. Designed by{" "}
             <a
-              href="https://laralink.com"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
