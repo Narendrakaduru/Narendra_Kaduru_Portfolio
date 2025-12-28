@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import photo from '../../assets/narendra_new.png';
+import photo from '../../assets/narendra_new-dec27.png';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Hero.css";
 
