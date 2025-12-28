@@ -10,9 +10,8 @@ const Hero = () => {
     const texts = [
       "DevOps Engineer",
       "Cloud Engineer",
-      "MEAN Stack Developer",
-      "MERN Stack Developer",
-      "UI/UX Developer",
+      "SRE Engineer",
+      "DevSecOps Engineer",
       "Freelancer"
     ];
     const typingSpeed = 120;       
