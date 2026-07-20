@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import photo from '../../assets/Narendra_Portfolio.png';
+import photo from '../../assets/Narendra_Portfolio_3.png';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Hero.css";
 
@@ -63,7 +63,7 @@ const Hero = () => {
       <div className="container">
         <div className="row align-items-center mx-5">
           {/* Left Content */}
-          <div className="col-lg-6 col-md-12 hero-text">
+          <div className="col-lg-6 col-md-12 hero-text px-5">
             <h3 className="mb-2">Hello, I’m</h3>
             <h1 className="mb-3">
               Narendra <br /> Kaduru
@@ -76,7 +76,7 @@ const Hero = () => {
                 Hire Me
               </a>
               <a
-                href="/resume/Narendra_Kaduru_DevOps_Resume_2025.docx"
+                href="/resume/Narendra_Kaduru_DevOps_Resume_2026.docx"
                 className="btn-hero btn-hero-outline"
                 download
                 onClick={() => {
