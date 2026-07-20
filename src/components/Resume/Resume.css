@@ -1,88 +1,114 @@
 .resume-section {
-  padding: 60px 0;
-  background-color: #070d1b;
-  color: #fff;
+  padding: 40px 0 100px;
+  background:
+    linear-gradient(180deg, var(--bg-dark) 0%, #050b18 100%);
+  color: var(--text-white);
 }
 
+/* ===== Resume Heading ===== */
 .st-resume-heading {
   display: flex;
   align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.st-resume-heading img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .st-resume-heading .st-resume-heading-title {
-  margin: 0 0 0 20px;
-  font-size: 36px;
-  font-weight: 400;
-  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-white);
+  letter-spacing: -0.5px;
 }
 
+/* ===== Timeline Track ===== */
 .st-resume-timeline-wrap {
-  padding-left: 2px;
+  padding-left: 4px;
   position: relative;
-  border-left: 2px solid #232935;
-  margin-left: 10px;
+  border-left: 2px solid var(--border);
+  margin-left: 12px;
 }
 
+/* ===== Individual Entry ===== */
 .st-resume-timeline {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 70px;
+  padding-left: 28px;
+  padding-bottom: 48px;
 }
 
 .st-resume-timeline:last-child {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.st-height-b50 {
-    height: 50px;
-}
-
+/* Timeline dot */
 .st-resume-timeline::before {
   content: "";
   position: absolute;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background-color: #101624;
-  border: 2px solid #232935;
-  top: 0;
-  left: -9px; /* aligns with border-left */
-  transition: all 0.3s ease;
+  background-color: var(--bg-input);
+  border: 2px solid var(--border-mid);
+  top: 0px;
+  left: -12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .st-resume-timeline:hover::before {
-  background-color: #fec544;
-  border-color: #fec544;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
+/* ===== Text ===== */
 .st-resume-timeline .st-resume-timeline-title {
-  font-size: 24px;
-  font-weight: 400;
-  color: #fec544;
-  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
 }
 
 .st-resume-timeline .st-resume-timeline-duration {
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 8px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--bg-deep);
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
 }
 
 .st-resume-timeline .st-resume-timeline-subtitle {
-  font-size: 18px;
+  font-size: 0.9rem;
   font-weight: 400;
-  color: #fff;
-  margin-bottom: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
 }
 
 .st-resume-timeline .st-resume-timeline-text p {
-  margin: 0 0 10px;
-  font-size: 14px;
-  color: #ddd;
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
 }
 
+/* ===== Spacing helpers ===== */
+.st-height-b50 { height: 50px; }
+.st-height-lg-b30 { height: 30px; }
+
+/* ===== Responsive ===== */
 @media only screen and (max-width: 991px) {
-  .st-resume-timeline {
-    margin-bottom: 30px;
-  }
+  .resume-section { padding: 20px 0 70px; }
+  .st-resume-timeline { padding-bottom: 32px; }
+  .st-resume-heading .st-resume-heading-title { font-size: 22px; }
 }

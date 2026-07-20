@@ -1,93 +1,156 @@
+/* ===== Hero Section ===== */
 .hero-section {
   min-height: 100vh;
-  background-color: #000;
-  color: white;
-  font-family: "Inter", sans-serif;
-  padding-top: 60px;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(254,197,68,0.05) 0%, transparent 70%),
+    linear-gradient(160deg, #050b18 0%, #070d1b 50%, #0a1020 100%);
+  color: var(--text-white);
+  font-family: 'Inter', sans-serif;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid overlay */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ===== Text Side ===== */
+.hero-text {
+  animation: fadeInUp 0.8s ease both;
 }
 
 .hero-text h3 {
-  font-weight: 200;
-  color: #ffc107;
-  font-size: 30px;
+  font-weight: 300;
+  color: var(--accent);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .hero-text h1 {
-  font-size: 90px;
-  line-height: 1;
-  font-weight: 700;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 40%, #a9adb8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hero-text .btn {
-  font-weight: 500;
+/* ===== Typing Effect ===== */
+#typing {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  max-width: 24ch;
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: var(--accent); }
+  50%       { border-color: transparent; }
+}
+
+/* ===== CTA Buttons ===== */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.btn-hero {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: var(--bg-deep);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  min-width: 140px;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+  text-transform: capitalize;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-hero:hover::after { opacity: 1; }
+
+.btn-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(254,197,68,0.35);
+  color: var(--bg-deep);
+}
+
+.btn-hero-outline {
+  background: transparent;
+  color: var(--text-white);
+  border: 1.5px solid var(--border-mid);
+}
+
+.btn-hero-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+  box-shadow: 0 8px 24px rgba(254,197,68,0.15);
+}
+
+.btn-hero-outline::after { display: none; }
+
+/* ===== Image Side ===== */
+.hero-image {
+  animation: fadeInUp 0.9s 0.15s ease both;
 }
 
 .hero-image img {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  mix-blend-mode: luminosity;
+  transition: none;
+  filter: contrast(1.05) brightness(0.95);
 }
 
-/* === Typing effect (faithful to your CSS) === */
-#typing {
-  font-weight: 200;            /* adjust if you want bold */
-  font-size: 1.5rem;           /* fits the hero's H2 scale */
-  color: #a9adb8;
-  border-right: 0.15em solid var(--caret-color, #ffc107); /* use yellow by default */
-  white-space: nowrap;
-  overflow: hidden;
-  width: fit-content;
-  max-width: 22ch;             /* longest text length */
-  animation: blink-caret 0.7s step-end infinite;
-}
-
-/* Caret blink */
-@keyframes blink-caret {
-  0%, 100% { border-color: var(--caret-color, #ffc107); }
-  50% { border-color: transparent; }
-}
-
-/* If you truly want black caret like your snippet, uncomment this line: */
-/* :root { --caret-color: black; } */
-
-.btn-hero {
-    background-color: #fec544;
-    color: #070d1b;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 1.5em;
-    font-weight: 400;
-    padding: 12px 1.2em;
-    border-radius: 50px;
-    min-width: 150px;
-    border: none;
-    outline: none;
-    transition: all .4s ease;
-    text-transform: capitalize;
-    cursor: pointer;
-}
-
-.btn-hero:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px #fec64450;
-}
-
+/* ===== Responsive ===== */
 @media only screen and (max-width: 991px) {
-  .hero-text h3 {
-    font-size: 24px;
-    margin-top: 40px;
-  }
-  .hero-text h1 {
-    font-size: 60px;
-  }
-  #typing {
-    font-size: 1.2rem;
-  }
-  .btn-hero {
-    margin-bottom: 20px;
-  }
+  .hero-section { padding-top: 100px; }
+  .hero-text h3 { font-size: 1rem; margin-top: 20px; }
+  .hero-text h1 { font-size: clamp(40px, 10vw, 60px); }
+  #typing { font-size: 1.1rem; }
+  .btn-hero { min-width: 120px; padding: 11px 22px; }
+  .hero-image img { margin-top: 32px; }
 }
