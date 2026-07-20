@@ -1,33 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
+/* ===================== DESIGN TOKENS ===================== */
+:root {
+  --bg-deep:     #050b18;
+  --bg-dark:     #070d1b;
+  --bg-card:     #0e1627;
+  --bg-input:    #101624;
+  --border:      #1e2736;
+  --border-mid:  #2c3548;
+  --accent:      #fec544;
+  --accent-dim:  #e0ad36;
+  --accent-glow: rgba(254,197,68,0.18);
+  --text-white:  #ffffff;
+  --text-muted:  #a9adb8;
+  --text-dim:    #6c7383;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-pill: 50px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 20px rgba(254,197,68,0.15);
+  --transition:  all 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* ===================== RESET / BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
   font-family: 'Inter', sans-serif;
-}
-.mt-7 {
-  margin-top: 7rem;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  margin: 0;
+  line-height: 1.7;
 }
 
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+/* ===================== UTILITIES ===================== */
+.mt-7 { margin-top: 7rem; }
+
+.highlight { color: var(--accent); }
+
+/* ===================== SECTION HEADING ===================== */
 .st-section-heading.st-style1 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .st-section-heading-title {
-  font-size: 24px;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: #fec544;
+  color: var(--accent);
   position: relative;
+  padding: 0 0 20px 0;
 }
 
 .st-section-heading-title::before {
   content: "";
   position: absolute;
-  background-color: #3f4551;
-  width: 170px;
-  height: 2px;
-  bottom: -16px;
+  background-color: var(--border-mid);
+  width: 160px;
+  height: 1px;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -35,17 +79,38 @@ body {
 .st-section-heading-title::after {
   content: "";
   position: absolute;
-  background-color: #fec544;
-  width: 70px;
+  background-color: var(--accent);
+  width: 60px;
   height: 2px;
-  bottom: -16px;
+  bottom: 7px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .st-section-heading-subtitle {
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 14px;
+  color: var(--text-white);
+  letter-spacing: -0.5px;
 }
+
+/* ===================== SPACING HELPERS ===================== */
+.st-height-b25  { height: 25px; }
+.st-height-b50  { height: 50px; }
+.st-height-b100 { height: 100px; }
+.st-height-lg-b80 { height: 80px; }
+
+@media (max-width: 991px) {
+  .st-height-b100, .st-height-lg-b80 { height: 60px; }
+  .st-height-b50, .st-height-lg-b30  { height: 30px; }
+}
+
+/* ===================== FADE-IN ANIMATION ===================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.7s ease both; }

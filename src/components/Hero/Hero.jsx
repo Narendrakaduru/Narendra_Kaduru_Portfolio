@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import photo from '../../assets/narendra_new-dec27.png';
+import photo from '../../assets/Narendra_Portfolio.png';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Hero.css";
 
@@ -71,13 +71,13 @@ const Hero = () => {
             <h2 className="mb-4">
               <span id="typing" ref={typingRef}></span>
             </h2>
-            <div>
-              <a href="#contact" className="btn-hero me-3">
+            <div className="hero-buttons">
+              <a href="#contact" className="btn-hero">
                 Hire Me
               </a>
               <a
                 href="/resume/Narendra_Kaduru_DevOps_Resume_2025.docx"
-                className="btn-hero"
+                className="btn-hero btn-hero-outline"
                 download
                 onClick={() => {
                   if (window.gtag) {
