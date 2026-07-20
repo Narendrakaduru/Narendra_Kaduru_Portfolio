@@ -9,11 +9,40 @@ import "./Blog.css";
 
 const BlogList = () => {
   const [search, setSearch] = useState("");
+  const [activeTag, setActiveTag] = useState("All");
+  const [sortBy, setSortBy] = useState("date-desc");
 
-  // Filter blogs by title based on search query
-  const filteredBlogs = blogs.filter(blog =>
-    blog.title.toLowerCase().includes(search.toLowerCase())
-  );
+  // Dynamically extract unique tags from posts
+  const allTags = ["All", ...new Set(blogs.map(blog => blog.tag))];
+
+  // Filter and sort blogs based on search, tag, and sort choices
+  const filteredAndSortedBlogs = blogs
+    .filter(blog => {
+      const matchesSearch = blog.title.toLowerCase().includes(search.toLowerCase());
+      const matchesTag = activeTag === "All" || blog.tag === activeTag;
+      return matchesSearch && matchesTag;
+    })
+    .sort((a, b) => {
+      if (sortBy === "date-desc") {
+        return new Date(b.date) - new Date(a.date);
+      }
+      if (sortBy === "date-asc") {
+        return new Date(a.date) - new Date(b.date);
+      }
+      if (sortBy === "read-asc") {
+        return parseInt(a.read_time, 10) - parseInt(b.read_time, 10);
+      }
+      if (sortBy === "read-desc") {
+        return parseInt(b.read_time, 10) - parseInt(a.read_time, 10);
+      }
+      if (sortBy === "title-asc") {
+        return a.title.localeCompare(b.title);
+      }
+      if (sortBy === "title-desc") {
+        return b.title.localeCompare(a.title);
+      }
+      return 0;
+    });
 
   return (
     <>
@@ -30,22 +59,55 @@ const BlogList = () => {
             <h4 className="st-section-heading-title">Blogs</h4>
           </div>
 
-          {/* Search Input */}
-          <div className="search-bar">
-            <i className="bi bi-search"></i>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search Blogs"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+          {/* Controls: Search & Sort */}
+          <div className="blog-search-sort-container">
+            <div className="search-bar-wrapper">
+              <i className="bi bi-search"></i>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search Blogs"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+            <div className="sort-dropdown-container">
+              <i className="bi bi-sort-down sort-icon"></i>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="sort-select"
+                aria-label="Sort blogs"
+              >
+                <option value="date-desc">Newest First</option>
+                <option value="date-asc">Oldest First</option>
+                <option value="read-asc">Shortest Read</option>
+                <option value="read-desc">Longest Read</option>
+                <option value="title-asc">Title (A-Z)</option>
+                <option value="title-desc">Title (Z-A)</option>
+              </select>
+            </div>
+            <div className="sort-dropdown-container">
+              <i className="bi bi-funnel filter-icon"></i>
+              <select
+                value={activeTag}
+                onChange={(e) => setActiveTag(e.target.value)}
+                className="sort-select"
+                aria-label="Filter by tag"
+              >
+                {allTags.map((tag) => (
+                  <option key={tag} value={tag}>{tag}</option>
+                ))}
+              </select>
+            </div>
           </div>
+
+
 
           <div className="row align-items-center mt-4 mb-5">
             <div className="blog-grid">
-              {filteredBlogs.length > 0 ? (
-                filteredBlogs.map((blog) => (
+              {filteredAndSortedBlogs.length > 0 ? (
+                filteredAndSortedBlogs.map((blog) => (
                   <div className="blog-card" key={blog.id}>
                     <div className="blog-image-wrapper">
                       <img src={blog.image} alt={blog.slug} className="blog-image" />
@@ -71,7 +133,9 @@ const BlogList = () => {
                   </div>
                 ))
               ) : (
-                <p>No blogs found.</p>
+                <div className="text-center w-100 mt-5">
+                  <p className="fs-5 text-muted">No blogs found.</p>
+                </div>
               )}
             </div>
           </div>
