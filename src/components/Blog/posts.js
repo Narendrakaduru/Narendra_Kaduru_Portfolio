@@ -298,6 +298,16 @@ const blogs = [
     "read_time": "4",
     "excerpt": "Learn how Ansible Vault helps you encrypt and manage sensitive data like passwords, API keys, and credentials securely within your playbooks. Step-by-step guide with commands, best practices, and examples.",
     "tag": "Ansible"
+  },
+  {
+    id: 31,
+    slug: "lwc-performance-optimization-10-mistakes",
+    title: "LWC Performance Optimization: 10 Mistakes Developers Should Avoid",
+    image: "/blogs/images/lwc-performance-optimization-10-mistakes.png",
+    date: "October 7, 2026",
+    read_time: "8",
+    excerpt: "Learn how to optimize Lightning Web Components for better performance. Discover 10 common LWC performance mistakes involving Apex calls, caching, SOQL, pagination, rendering, lazy loading, and browser performance, with practical examples and best practices.",
+    tag: "Salesforce"
   }
 
 ];
