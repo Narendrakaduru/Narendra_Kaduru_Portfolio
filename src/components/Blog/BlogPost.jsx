@@ -19,10 +19,18 @@ const BlogPost = () => {
     // Fetch markdown file from public/blogs/{slug}.md
     fetch(`/blogs/${post.slug}.md`)
       .then((res) => {
-        if (!res.ok) throw new Error("Post not found");
+        const contentType = res.headers.get("content-type");
+        if (!res.ok || (contentType && contentType.includes("text/html"))) {
+          throw new Error("Post not found");
+        }
         return res.text();
       })
-      .then((text) => setContent(text))
+      .then((text) => {
+        if (text.trim().toLowerCase().startsWith("<!doctype html")) {
+          throw new Error("Post not found");
+        }
+        setContent(text);
+      })
       .catch(() =>
         setContent("# 404 Not Found\nThe blog post could not be loaded.")
       );
